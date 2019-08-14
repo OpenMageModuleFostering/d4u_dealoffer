@@ -1,0 +1,45 @@
+<?php
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Offers view widget template
+ *
+ * @category	D4U
+ * @package		D4U_Dealoffer
+ * @author Ultimate Module Creator
+ */
+?>
+<?php $_offers = $this->getCurrentOffers();?>
+<?php if ($_offers) :?>
+	<div class="offers-widget-view">
+		<h3><?php echo $_offers->getName()?></h3>
+		<div>
+			<?php echo Mage::helper('dealoffer')->__('Name');?>:<?php echo $_offers->getName();?>
+			<?php echo Mage::helper('dealoffer')->__('Category');?>:<?php echo $_offers->getCategoryId();?>
+			<?php echo Mage::helper('dealoffer')->__('Start Date');?>:<?php echo $_offers->getStartDate();?>
+			<?php echo Mage::helper('dealoffer')->__('End Date');?>:<?php echo $_offers->getEndDate();?>
+			<?php if ($_offers->getDealImage()) :?>
+		<img src="<?php echo Mage::helper('dealoffer/offers_image')->init($_offers, 'deal_image')->resize(75);?>" alt="<?php echo $this->htmlEscape($_offers->getName());?>" />
+		<?php endif;?>
+				<?php if ($_offers->getOfferImage()) :?>
+		<a href="<?php echo Mage::helper('dealoffer/offers')->getFileBaseUrl().$_offers->getOfferImage();?>">
+			<span><?php echo basename($_offers->getOfferImage())?></span>
+		</a>
+		<?php endif;?>
+
+		</div>
+	</div>
+<?php endif;?> 

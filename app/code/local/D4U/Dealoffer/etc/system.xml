@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<config>
+	<tabs>
+		<d4u translate="label" module="dealoffer">
+			<label>D4U</label>
+			<sort_order>2000</sort_order>
+		</d4u>
+	</tabs>
+ 	<sections>
+		<dealoffer translate="label" module="dealoffer">
+			<class>separator-top</class>
+			<label>Deal Offer</label>
+			<tab>d4u</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<offers translate="label" module="dealoffer">
+					<label>Deal Offer Settings</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<breadcrumbs translate="label" module="dealoffer">
+							<label>Use Breadcrumbs For Offers Pages</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</breadcrumbs>
+						<rss translate="label" module="dealoffer">
+							<label>Enable rss</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</rss>
+						<meta_title translate="label" module="dealoffer">
+							<label>Meta title for offers list page</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</meta_title>
+						<meta_description translate="label" module="dealoffer">
+							<label>Meta description for offers list page</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</meta_description>
+						<meta_keywords translate="label" module="dealoffer">
+							<label>Meta keywords for offers list page</label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</meta_keywords>
+						
+					</fields>
+				</offers>
+			</groups>
+		</dealoffer>
+	</sections>
+</config> 

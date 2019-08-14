@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/d4u_dealoffer",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Deal offer for Magento",
+    "authors": [
+    {
+        "name": "Gayatri",
+        "email": "gayatri.patel@einfochips.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+	<default>
+	<reference name="footer_links">
+			<action method="addLink" translate="label title" module="dealoffer">
+				<label>Deal Offers</label>
+				<url helper="dealoffer/getOfferssUrl" />
+				<title>Deal Offers</title>
+				<prepare />
+				<urlParams/>
+				<position>120</position>
+			</action>
+		</reference>
+		<reference name="top.links">
+			<action method="addLink" translate="label title" module="dealoffer">
+				<label>Deal Offers</label>
+				<url helper="dealoffer/getOfferssUrl" />
+				<title>Deal Offers</title>
+				<prepare />
+				<urlParams/>
+				<position>5</position>
+			</action>
+		</reference>
+		 <reference name="right">
+			<block type="dealoffer/Offers_List" name="daily deal" before="cart_sidebar" template="d4u_dealoffer/getdailydeal.phtml" >
+        </block>
+		</reference>
+		
+		
+	</default>
+	<dealoffer_offers_index translate="label" module="dealoffer">
+		<label>Offers list</label>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>		
+		<reference name="content">
+			<block type="dealoffer/offers_list" name="offers_list" template="d4u_dealoffer/offers/list.phtml" />
+		</reference>
+	</dealoffer_offers_index>
+	<dealoffer_offers_view translate="label" module="dealoffer">
+		<label>Offers view page</label>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="dealoffer/offers_view" name="offers_view" template="d4u_dealoffer/offers/view.phtml" />
+			<block type="dealoffer/offers_catalog_product_list" name="offers.info.products" as="offers_products" template="d4u_dealoffer/offers/catalog/product/list.phtml" />
+		</reference>
+	</dealoffer_offers_view>
+	<dealoffer_offers_rss translate="label" module="dealoffer">
+		<label>Offers rss feed</label>
+		<block type="dealoffer/offers_rss" output="toHtml" name="dealoffer.offers.rss" />
+	</dealoffer_offers_rss>
+	<rss_index_index>
+		<reference name="content">
+			<block type="dealoffer/rss" name="dealoffer.rss" template="d4u_dealoffer/rss.phtml">
+				<action method="addFeed" ifconfig="dealoffer/offers/rss" translate="label" module="dealoffer">
+					<label>Offers</label>
+					<url helper="dealoffer/offers/getRssUrl" />
+				</action>
+			</block>
+		</reference>
+	</rss_index_index>
+	 
+</layout>

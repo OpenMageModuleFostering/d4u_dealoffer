@@ -1,0 +1,30 @@
+<?php
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Offers link widget template
+ *
+ * @category	D4U
+ * @package		D4U_Dealoffer
+ * @author Ultimate Module Creator
+ */
+?>
+<?php $_offers = $this->getCurrentOffers();?>
+<?php if ($_offers) :?>
+	<div class="offers-widget-link">
+		<a href="<?php echo $_offers->getOffersUrl()?>"><?php echo $_offers->getName()?></a>
+	</div>
+<?php endif;?> 

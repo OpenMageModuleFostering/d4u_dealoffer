@@ -1,0 +1,47 @@
+<?php 
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Offers view template
+ *
+ * @category	D4U
+ * @package		D4U_Dealoffer
+ * @author Ultimate Module Creator
+ */
+ $get_parm = $this->getRequest()->getParams();
+ if(!isset($get_parm['mode'])){
+ $get_parm['mode'] ="grid";
+ }
+?>
+<?php $_offers = $this->getCurrentOffers();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title category-title">
+	<h1><?php echo $_offers->getName(); ?></h1>
+</div>
+<div class="pager" style="text-align:right">
+        		<label>View as:</label>
+				<?php if(isset($get_parm['mode']) && $get_parm['mode'] == 'grid') {?>
+				<strong class="grid" title="Grid" >Grid</strong>
+				<?php }else{ ?>
+				<a class="grid" title="Grid" href="<?php echo $_offers->getOffersUrl();?>?mode=grid">Grid</a>
+				<?php  } ?>
+				
+				<?php if(isset($get_parm['mode']) && $get_parm['mode'] == 'list') {?>
+				<strong class="list" title="List" >List</strong>
+				<?php }else{ ?>
+				<a class="list" title="List" href="<?php echo $_offers->getOffersUrl();?>?mode=list">List</a>
+				<?php  } ?>
+</div>

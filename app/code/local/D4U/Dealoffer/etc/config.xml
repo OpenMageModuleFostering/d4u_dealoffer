@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+	<modules>
+		<D4U_Dealoffer>
+			<version>0.0.1</version>
+		</D4U_Dealoffer>
+	</modules>
+	<global>
+		<resources>
+			<d4u_dealoffer_setup>
+				<setup>
+					<module>D4U_Dealoffer</module>
+					<class>D4U_Dealoffer_Model_Resource_Setup</class>
+				</setup>
+			</d4u_dealoffer_setup>
+		</resources>
+		<blocks>
+			<dealoffer>
+				<class>D4U_Dealoffer_Block</class>
+			</dealoffer>
+		</blocks>
+		<helpers>
+			<dealoffer>
+				<class>D4U_Dealoffer_Helper</class>
+			</dealoffer>
+		</helpers>
+		<models>
+			<dealoffer>
+				<class>D4U_Dealoffer_Model</class>
+				<resourceModel>dealoffer_resource</resourceModel>
+			</dealoffer>
+			<dealoffer_resource>
+				<class>D4U_Dealoffer_Model_Resource</class>
+				<entities>
+					<offers>
+						<table>dealoffer_offers</table>
+					</offers>
+					<offers_store>
+						<table>dealoffer_offers_store</table>
+					</offers_store>
+					<offers_product>
+						<table>dealoffer_offers_product</table>
+					</offers_product>
+				</entities>
+			</dealoffer_resource>
+		</models>
+		<events>
+			<controller_front_init_routers>
+				<observers>
+					<d4u_dealoffer>
+						<class>D4U_Dealoffer_Controller_Router</class>
+						<method>initControllerRouters</method>
+					</d4u_dealoffer>
+				</observers>
+			</controller_front_init_routers>
+		</events>
+	</global>
+	<adminhtml>
+		<layout>
+			<updates>
+				<d4u_dealoffer>
+					<file>d4u_dealoffer.xml</file>
+				</d4u_dealoffer>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<D4U_Dealoffer>
+					<files>
+						<default>D4U_Dealoffer.csv</default>
+					</files>
+				</D4U_Dealoffer>
+			</modules>
+		</translate>
+		<events>
+			<core_block_abstract_prepare_layout_after>
+				<observers>
+					<offers>
+						<type>singleton</type>
+						<class>dealoffer/adminhtml_observer</class>
+						<method>addOffersBlock</method>
+					</offers>
+				</observers>
+			</core_block_abstract_prepare_layout_after>
+			<catalog_product_save_after>
+				<observers>
+					<offers>
+						<type>singleton</type>
+						<class>dealoffer/adminhtml_observer</class>
+						<method>saveOffersData</method>
+					</offers>
+				</observers>
+			</catalog_product_save_after>
+		</events>
+		<global_search>
+			<offers>
+				<class>dealoffer/adminhtml_search_offers</class>
+				<acl>dealoffer</acl>
+			</offers>
+		</global_search>
+	</adminhtml>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<D4U_Dealoffer before="Mage_Adminhtml">D4U_Dealoffer_Adminhtml</D4U_Dealoffer>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<frontend>
+		<routers>
+			<dealoffer>
+				<use>standard</use>
+				<args>
+					<module>D4U_Dealoffer</module>
+					<frontName>dealoffer</frontName>
+				</args>
+			</dealoffer>
+		</routers>
+		<layout>
+			<updates>
+				<d4u_dealoffer>
+					<file>d4u_dealoffer.xml</file>
+				</d4u_dealoffer>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<D4U_Dealoffer>
+					<files>
+						<default>D4U_Dealoffer.csv</default>
+					</files>
+				</D4U_Dealoffer>
+			</modules>
+		</translate>
+	</frontend>
+	<default>
+		<dealoffer>
+			<offers>
+				<breadcrumbs>1</breadcrumbs>
+				<rss>1</rss>
+				<meta_title>Offers</meta_title>
+			</offers>
+		</dealoffer>
+	</default>
+</config>

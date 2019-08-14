@@ -1,0 +1,110 @@
+.dela_offer{
+		float:left;
+		width:100%;
+		min-height:100%
+		}
+div.itemcategory{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 5px;
+    position: relative;
+    width: 250px;
+	height:310px;
+}
+div.itemcategory:hover {
+  background: none repeat scroll 0 0 #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 5px;
+    position: relative;
+    width: 250px;
+	height:310px;
+}
+div.item {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 5px;
+    position: relative;
+    width: 398px;
+	height:385px;
+}	
+div.item:hover {
+    background: none repeat scroll 0 0 #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    float: left;
+    margin: 0 15px 30px;
+    padding: 5px;
+    position: relative;
+    width: 398px;
+	height:385px;
+}
+.item_center_image{
+	height: 250px;
+    width: 350px;
+    vertical-align: middle;
+    display: table-cell;
+    margin: auto;
+    text-align: center;overflow:hidden;
+}
+.itemcategory_center_image{
+	height: 200px;
+    width: 200px;
+    vertical-align: middle;
+    display: table-cell;
+    margin: auto;
+    text-align: center;overflow:hidden;
+	/*height:200px;width:200px;line-height:200px;text-align:center;overflow;hidden;*/
+}
+.bordder_bottom{ 
+	border-bottom: 1px solid #CCCCCC;
+    margin: auto;
+    width: 85%; 
+	}
+.title{ 
+	padding-top:5px;
+	text-align:center;
+	color: #3C3C3C;
+	font-size: 16px;
+}
+div.item .product-image {
+    display: block;
+    margin: 0 0 0px 56px;
+    position: relative;
+    z-index: 1;
+	
+}
+div.itemcategory .product-image {
+    display: block;
+    margin: 0 0 12px 25px;
+    position: relative;
+    z-index: 1;
+	
+}
+.button{ 
+		width:24%;
+		margin:auto;
+		padding-top:10px;}
+.btn-orange{
+		background: #FF6600;
+		border: 2px solid #EC6723;
+		color: #FFFFFF;
+		padding: 6px;
+		text-decoration: none;
+}
+.time{
+		background :none repeat scroll 0 0 #FAE683;
+		border:1px solid #FAC903;
+		color:#333333;
+		font-size:15px;
+		padding:0px 5px 0px 5px;
+}
+

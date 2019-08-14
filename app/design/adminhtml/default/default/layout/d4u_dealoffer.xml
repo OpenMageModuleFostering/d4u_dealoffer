@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * D4U_Dealoffer extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category   	D4U
+ * @package		D4U_Dealoffer
+ * @copyright  	Copyright (c) 2013
+ * @license		http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+	<!-- Offers grid action -->
+	<adminhtml_dealoffer_offers_index>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>dealoffer/offers</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="dealoffer/adminhtml_offers" name="offers" />
+		</reference>
+	</adminhtml_dealoffer_offers_index>
+	<adminhtml_dealoffer_offers_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="dealoffer/adminhtml_offers_grid" name="offers_grid"/>
+		</block>
+	</adminhtml_dealoffer_offers_grid>
+	<!-- Offers add/edit action -->
+	<adminhtml_dealoffer_offers_edit>
+		<update handle="editor"/>
+		<reference name="menu">
+			<action method="setActive">
+				<menupath>dealoffer/offers</menupath>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="dealoffer/adminhtml_offers_edit" name="offers_edit"></block>
+		</reference>
+		<reference name="left">
+			<block type="dealoffer/adminhtml_offers_edit_tabs" name="offers_tabs"></block>
+		</reference> 
+	</adminhtml_dealoffer_offers_edit>
+	<adminhtml_dealoffer_offers_catalog_product_offerss>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="dealoffer/adminhtml_catalog_product_edit_tab_offers" name="product.edit.tab.offers"/>
+			<block type="adminhtml/widget_grid_serializer" name="offers_grid_serializer">
+				<reference name="offers_grid_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>product.edit.tab.offers</grid_block_name>
+						<data_callback>getSelectedOfferss</data_callback>
+						<hidden_input_name>offerss</hidden_input_name>
+						<reload_param_name>product_offerss</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+						<input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+	</adminhtml_dealoffer_offers_catalog_product_offerss>
+	<adminhtml_dealoffer_offers_catalog_product_offerssgrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="dealoffer/adminhtml_catalog_product_edit_tab_offers" name="product.edit.tab.offers"/>
+		</block>
+	</adminhtml_dealoffer_offers_catalog_product_offerssgrid>
+	<adminhtml_dealoffer_offers_products>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="dealoffer/adminhtml_offers_edit_tab_product" name="offers.edit.tab.product"/>
+			<block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+				<reference name="product_grid_serializer">
+					<action method="initSerializerBlock">
+						<grid_block_name>offers.edit.tab.product</grid_block_name>
+							<data_callback>getSelectedProducts</data_callback>
+							<hidden_input_name>products</hidden_input_name>
+							<reload_param_name>offers_products</reload_param_name>
+					</action>
+					<action method="addColumnInputName">
+						<input_name>position</input_name>
+					</action>
+				</reference>
+			</block>
+		</block>
+	</adminhtml_dealoffer_offers_products>
+	<adminhtml_dealoffer_offers_productsgrid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="dealoffer/adminhtml_offers_edit_tab_product" name="offers.edit.tab.product"/>
+		</block>
+	</adminhtml_dealoffer_offers_productsgrid>
+</layout>
