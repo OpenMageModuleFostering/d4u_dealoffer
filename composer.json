@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/d4u_dealoffer",
+    "name": "openmage-module-fostering\/d4u_dealoffer",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Deal offer for Magento",
     "authors": [
